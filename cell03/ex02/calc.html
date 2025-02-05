@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<style>
+    body {
+        background-color: pink;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    button {
+        padding: 5px 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <input type="text" id="input1" placeholder="number 1" />
+        <select name="type" id="type">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="multi">*</option>
+            <option value="div">/</option>
+            <option value="mod">%</option>
+        </select>
+        <input type="text" id="input2" placeholder="number 2" />
+    </div>
+    <button onclick="calculate()">Try me!</button>
+
+
+    <script>
+        function calculate() {
+            const input1 = document.getElementById('input1').value.trim();
+            const input2 = document.getElementById('input2').value.trim();
+            const operator = document.getElementById('type').value;
+
+            const num1 = Number(input1);
+            const num2 = Number(input2);
+
+            if (isNaN(num1) || num1 <= 0 || isNaN(num2) || num2 <= 0) {
+                alert("Error :(");
+                console.log("Error :(");
+                return;
+            }
+
+            let result;
+            switch (operator) {
+                case 'plus':
+                    result = num1 + num2;
+                    break;
+                case 'minus':
+                    result = num1 - num2;
+                    break;
+                case 'multi':
+                    result = num1 * num2;
+                    break;
+                case 'div':
+                    if (num2 === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        break;
+                    }
+                    result = num1 / num2;
+                    break;
+                case 'mod':
+                    if (num2 === 0) {
+                        alert("It's over 9000!");
+                        console.log("It's over 9000!");
+                        break;
+                    }
+                    result = num1 % num2;
+                    break;
+                default:
+                    alert("Invalid operator.");
+                    return;
+            }
+
+            alert(`The result is: ${result}`);
+            console.log(`The result is: ${result}`)
+        }
+
+        function showAlert() {
+            alert('Please, use me...');
+        }
+        setInterval(showAlert, 30000);
+    </script>
+</body>
+
+</html>
