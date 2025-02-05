@@ -1,6 +1,5 @@
 let ft_list = document.getElementById("ft_list");
 let button = document.getElementById("button");
-let todoID = 0;
 
 function createTodoNode(name, todo) {
     let new_node = document.createElement("div");
@@ -10,18 +9,17 @@ function createTodoNode(name, todo) {
         let confirmDelete = confirm("Do you want to delete this to-do?");
         if (confirmDelete) {
             new_node.remove();
-            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`; //ลบ cookie
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
         }
     });
-
     ft_list.prepend(new_node);
 }
 
-window.addEventListener("load", function () { //โหลด cookie ตอนหน้าโหลด
+window.addEventListener("load", function () {
     let cookies = document.cookie.split(";");
     cookies.forEach((cookie) => {
         let [name, value] = cookie.trim().split("=");
-        if (name.startsWith("todo_") && value) {
+        if (value) {
             createTodoNode(name, value);
         }
     });
@@ -30,10 +28,8 @@ window.addEventListener("load", function () { //โหลด cookie ตอนห
 button.addEventListener("click", function () {
     let todo = prompt("Add new to-do");
     if (todo) {
-        let name = "todo_" + todoID.toString();
+        let name = Date.now();
         document.cookie = `${name}=${todo}`;
-        todoID++;
-
         createTodoNode(name, todo);
     }
 });
