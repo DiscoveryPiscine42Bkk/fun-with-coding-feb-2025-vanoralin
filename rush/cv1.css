@@ -1,0 +1,272 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    font-family: "League Spartan";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+}
+
+.nav-bar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70vw;
+    padding: 20px;
+    background: #b8dcfc;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 25px;
+    gap: 10vw;
+    z-index: 1000;
+}
+
+.nav-bar-div {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-bar-div:hover {
+    border-radius: 50px;
+    color: #47a1f0;
+}
+
+/* profile */
+#profile {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-pic {
+    margin-top: 15vh;
+    border-radius: 50%;
+    border: 5px solid #b8dcfc;
+    height: 30vw;
+    width: auto;
+    margin-right: 5vh;
+    box-shadow: 0 0 15px rgba(184,220,252, 1);
+}
+
+.profile-text {
+    margin-top: 15vh;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+    align-items: center;
+}
+
+.profile-text h4, p {
+    margin-top: 0;
+}
+
+/* certificate */
+.cert-box {
+    padding: 50px;
+}
+
+.skill {
+    position: relative;
+    margin-bottom: 20px;
+    border: 5px solid #b8dcfc;
+    border-radius: 50px;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.skill-head {
+    font-weight: bold;
+    padding: 10px 30px;
+    background-color: #b8dcfc;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.skill-each {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.skill-each p {
+    min-width: 100px;
+    text-align: left;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.score-bar {
+    width: 50vw;
+    height: 20px;
+    background-color: #eaeaea;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.score {
+    height: 100%;
+    background: #ffe181;
+    width: 0%;
+    transition: width 0.5s;
+}
+
+.left-top {
+    position: absolute;
+    top: -5vw;
+    left: 0;
+    width: 20vw;
+    height: auto;
+    z-index: 0;
+}
+
+.right-bottom {
+    position: absolute;
+    bottom: -20px; 
+    right: -2vw;
+    width: 15vw;
+    height: auto;
+    z-index: 0;
+}
+
+.cert {
+    background-color: #b8dcfc;
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.cert-head {
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-color: white;
+    display: inline-block;
+}
+
+.cert-all {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px; 
+    justify-content: center;
+}
+
+.cert-each {
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.cert-all img {
+    width: 27vw;
+    max-width: 100%;
+    height: auto;
+    border: 5px solid white;
+    border-radius: 20px;
+}
+
+.cert-each:hover {
+    transform: scale(1.1); 
+}
+
+/* contact */
+.cont {
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.cont-head {
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-color: #b8dcfc;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+
+.cont-text > p {
+    font-size: 20px;
+}
+
+.cont-all {
+    margin-left: 30vh;
+    margin-right: 30vh;
+    display: flex;
+    justify-content: center;
+    gap: 50px 150px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.cont-each {
+    width: 200px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.cont-each:hover {
+    transform: scale(1.1); 
+}
+
+.cont-each a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cont-each img {
+    width: 100px;
+}
+
+.cont-box {
+    padding: 30px;
+}
+
+
+@media (max-width: 850px) {
+    .nav-bar {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .nav-bar-div {
+        font-size: 20px;
+    }
+
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 10px; 
+    }
+
+    .profile-text {
+        margin-top: 0;
+        max-width: 80vw;
+    }
+
+    .cert-each img{
+        width: 70vw;
+        height: auto;
+    }
+
+    .cont-all {
+        margin: 0;
+        gap: 20px;
+    }
+
+    .cont-each img {
+        width: 8vw;
+        height: auto;
+    }
+}
