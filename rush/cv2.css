@@ -19,6 +19,7 @@ nav {
     justify-content: space-around;
     height: 50px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 
 }
 
@@ -99,6 +100,7 @@ nav a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     width: 70vw;
     transition: transform 0.3s ease;
+    z-index: 0;
 }
 
 .work-item:hover {
