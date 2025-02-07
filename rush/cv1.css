@@ -102,6 +102,7 @@ body {
 }
 
 .skill-each p {
+    margin: 20px;
     min-width: 100px;
     text-align: left;
     font-weight: bold;
